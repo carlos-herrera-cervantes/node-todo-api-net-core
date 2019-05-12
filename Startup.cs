@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using node_todo_api_net_core.Contexts;
+using node_todo_api_net_core.Repositories;
 
 namespace node_todo_api_net_core
 {
@@ -24,6 +25,7 @@ namespace node_todo_api_net_core
         {
             services.AddMvc();
             services.AddDbContext<TodoAppContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddTransient<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,10 +36,7 @@ namespace node_todo_api_net_core
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
