@@ -19,8 +19,24 @@ namespace node_todo_api_net_core.Controllers
         /// </summary>
 
         #region snippet_GetAll
+        [HttpGet]
         public async Task<IEnumerable<User>> GetAll() => await _userRepository.GetAll();
 
+        #endregion
+
+        #region snippet_GetById
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(long id)
+        {
+            User user = await _userRepository.GetById(id);
+
+            if (user != null)
+            {
+                return Ok(user);
+            }
+
+            return NotFound();
+        }
         #endregion
     }
 }
