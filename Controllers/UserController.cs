@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using node_todo_api_net_core.Models;
 using node_todo_api_net_core.Repositories;
@@ -54,6 +55,26 @@ namespace node_todo_api_net_core.Controllers
             }
 
             return BadRequest();
+        }
+        #endregion
+
+        /// <summary>
+        /// PUT
+        /// </summary>
+
+        #region snippet_Update
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> Update(long id, [FromBody] JsonPatchDocument<User> currentUser)
+        {
+            User newUser = await _userRepository.GetById(id);
+
+            if (newUser is null)
+            {
+                return NotFound();
+            }
+
+            await _userRepository.Update(newUser, currentUser);
+            return Ok(currentUser);
         }
         #endregion
     }
