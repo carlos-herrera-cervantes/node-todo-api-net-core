@@ -30,12 +30,30 @@ namespace node_todo_api_net_core.Controllers
         {
             User user = await _userRepository.GetById(id);
 
-            if (user != null)
+            if (user == null)
             {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
+        #endregion
+
+        /// <summary>
+        /// POST
+        /// </summary>
+
+        #region snippet_Create
+        [HttpPost]
+        public async Task<IActionResult> Create(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                await _userRepository.Create(user);
                 return Ok(user);
             }
 
-            return NotFound();
+            return BadRequest();
         }
         #endregion
     }
