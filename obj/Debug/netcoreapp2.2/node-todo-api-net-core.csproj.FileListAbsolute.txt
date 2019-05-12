@@ -1,0 +1,14 @@
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/bin/Debug/netcoreapp2.2/node-todo-api-net-core.deps.json
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/bin/Debug/netcoreapp2.2/node-todo-api-net-core.runtimeconfig.json
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/bin/Debug/netcoreapp2.2/node-todo-api-net-core.runtimeconfig.dev.json
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/bin/Debug/netcoreapp2.2/node-todo-api-net-core.dll
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/bin/Debug/netcoreapp2.2/node-todo-api-net-core.pdb
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/obj/Debug/netcoreapp2.2/node-todo-api-net-core.csprojAssemblyReference.cache
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/obj/Debug/netcoreapp2.2/node-todo-api-net-core.csproj.CoreCompileInputs.cache
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/obj/Debug/netcoreapp2.2/node-todo-api-net-core.RazorAssemblyInfo.cache
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/obj/Debug/netcoreapp2.2/node-todo-api-net-core.RazorAssemblyInfo.cs
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/obj/Debug/netcoreapp2.2/node-todo-api-net-core.AssemblyInfoInputs.cache
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/obj/Debug/netcoreapp2.2/node-todo-api-net-core.AssemblyInfo.cs
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/obj/Debug/netcoreapp2.2/node-todo-api-net-core.RazorTargetAssemblyInfo.cache
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/obj/Debug/netcoreapp2.2/node-todo-api-net-core.dll
+/home/carlos/ubuntu/practicas/node-todo-api-net-core/obj/Debug/netcoreapp2.2/node-todo-api-net-core.pdb
