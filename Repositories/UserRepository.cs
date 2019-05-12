@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.EntityFrameworkCore;
 using node_todo_api_net_core.Contexts;
 using node_todo_api_net_core.Models;
 
@@ -25,7 +26,10 @@ namespace node_todo_api_net_core.Repositories
         #endregion
 
         #region snippet_GetById
-        public async Task<User> GetById(long id) => await _context.Users.FindAsync(id);
+        public async Task<User> GetById(long id) => await Task.Run(() => 
+        {
+            return _context.Users.AsNoTracking().FirstOrDefault(u => u.Id == id);
+        });
 
         #endregion
 
@@ -49,6 +53,18 @@ namespace node_todo_api_net_core.Repositories
         public async Task Update(User newUser, JsonPatchDocument<User> currentUser)
         {
             currentUser.ApplyTo(newUser);
+            await _context.SaveChangesAsync();
+        }
+        #endregion
+
+        /// <summary>
+        /// DELETE
+        /// </summary>
+
+        #region snippet_Delete
+        public async Task Delete(long id)
+        {
+            _context.Users.Remove(new User { Id = id });
             await _context.SaveChangesAsync();
         }
         #endregion

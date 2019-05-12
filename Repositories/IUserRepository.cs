@@ -11,5 +11,6 @@ namespace node_todo_api_net_core.Repositories
         Task<User> GetById(long id);
          Task Create(User user);
          Task Update(User newUser, JsonPatchDocument<User> currentUser);
+         Task Delete(long id);
     }
 }

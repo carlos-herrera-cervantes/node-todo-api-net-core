@@ -31,7 +31,7 @@ namespace node_todo_api_net_core.Controllers
         {
             User user = await _userRepository.GetById(id);
 
-            if (user == null)
+            if (user is null)
             {
                 return NotFound();
             }
@@ -59,7 +59,7 @@ namespace node_todo_api_net_core.Controllers
         #endregion
 
         /// <summary>
-        /// PUT
+        /// PATCH
         /// </summary>
 
         #region snippet_Update
@@ -75,6 +75,26 @@ namespace node_todo_api_net_core.Controllers
 
             await _userRepository.Update(newUser, currentUser);
             return Ok(currentUser);
+        }
+        #endregion
+
+        /// <summary>
+        /// DELETE
+        /// </summary>
+
+        #region snippet_Delete
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(long id)
+        {
+            User user = await _userRepository.GetById(id);
+
+            if (user is null)
+            {
+                return NotFound();
+            }
+
+            await _userRepository.Delete(id);
+            return Ok();
         }
         #endregion
     }
