@@ -7,7 +7,7 @@ using node_todo_api_net_core.Repositories;
 
 namespace node_todo_api_net_core.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/users")]
     [ApiController]
     public class UserController : ControllerBase
     {

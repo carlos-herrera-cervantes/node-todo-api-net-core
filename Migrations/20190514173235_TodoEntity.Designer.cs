@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using node_todo_api_net_core.Contexts;
 
 namespace node_todo_api_net_core.Migrations
 {
     [DbContext(typeof(TodoAppContext))]
-    partial class TodoAppContextModelSnapshot : ModelSnapshot
+    [Migration("20190514173235_TodoEntity")]
+    partial class TodoEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

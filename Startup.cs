@@ -26,6 +26,7 @@ namespace node_todo_api_net_core
             services.AddMvc();
             services.AddDbContext<TodoAppContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ITodoRepository, TodoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
